@@ -14,7 +14,7 @@ struct MinMax
     double max;
 };
 
-const double STK_PRICE = 163.75;
+const double STK_PRICE = 184.75;
 const double TEN_PERCENT = 0.1;
 const double FIVE_PERCENT = 0.05;
 const int QTR_DAYS = 60;
