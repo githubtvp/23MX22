@@ -41,7 +41,7 @@ int main()
     pr("\nMin : " + to_string(min));
     pr("\nMax : " + to_string(max));
     pr("\nStk Price : " + to_string(STK_PRICE) + "\nAvg price : " + to_string(avgPrice));  
-    analysis(min, max, avgPrice, STK_PRICE) ;
+    analysis(min, max, avgPrice, STK_PRICE);
 }
 
 void analysis(double min, double max, double avg, double cur)
@@ -60,14 +60,14 @@ void generateStkPrices(vector<double> &v1, double low, double high, int days)
 {
     random_device rd;
     mt19937 gen(rd());
-    uniform_real_distribution<> dis(low, high);   
+    uniform_real_distribution<> dis(-1* high, high);   
     double prevPrice = 0;
     double curPrice = STK_PRICE; 
     
     for (int i = 0; i < days; i++)
     {  
         v1.push_back(curPrice);      
-        pr("\n" + to_string(v1[i]));
+       // pr("\n" + to_string(v1[i]));
         prevPrice = (curPrice /(1 + dis(gen)));
         prevPrice = round(prevPrice * 100.0) / 100.0;       
         curPrice = prevPrice;
