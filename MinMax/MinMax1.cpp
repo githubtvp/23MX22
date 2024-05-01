@@ -45,12 +45,6 @@ int main()
    // prVecVal(v1, v2); 
     prn();
     prVecVal(v1);
-<<<<<<< HEAD
-    pr("\nMin : " + to_string(min));
-    pr("\nMax : " + to_string(max));
-    pr("\nStk Price : " + to_string(STK_PRICE) + "\nAvg price : " + to_string(avgPrice));  
-    analysis(min, max, avgPrice, STK_PRICE);
-=======
     prn();
    // pr("\nQ1 Analysis : ");
     analysis(q1Stk);   
@@ -58,7 +52,6 @@ int main()
     // analysis(q2Stk);
     prn();
     prn();
->>>>>>> 54fe2b1a22ee53989cca039c45bbf5d5bdc692a9
 }
 
 void analysis(Stock aStk)
@@ -150,18 +143,6 @@ void generateStkPrices(vector<double> &v1, double rng, int days, double curPrc, 
 {
     random_device rd;
     mt19937 gen(rd());
-<<<<<<< HEAD
-    uniform_real_distribution<> dis(-1* high, high);   
-    double prevPrice = 0;
-    double curPrice = STK_PRICE; 
-    
-    for (int i = 0; i < days; i++)
-    {  
-        v1.push_back(curPrice);      
-       // pr("\n" + to_string(v1[i]));
-        prevPrice = (curPrice /(1 + dis(gen)));
-        prevPrice = round(prevPrice * 100.0) / 100.0;       
-=======
 
     uniform_real_distribution<> dis((-1 * rng), rng);
     double prevPrice = 0;
@@ -183,7 +164,6 @@ void generateStkPrices(vector<double> &v1, double rng, int days, double curPrc, 
         }       
         prevPrice = (curPrice / (1 + dis(gen)));
         prevPrice = round(prevPrice * 100.0) / 100.0;
->>>>>>> 54fe2b1a22ee53989cca039c45bbf5d5bdc692a9
         curPrice = prevPrice;
     }
 }
